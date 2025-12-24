@@ -1,0 +1,17 @@
+src/hooks/useDashboard.ts(101,21): error TS2345: Argument of type '(item: { valor: number; status: string; forma_pagamento: { tipo: string; }; }) => void' is not assignable to parameter of type '(value: { valor: any; status: any; forma_pagamento: { tipo: any; }[]; }, index: number, array: { valor: any; status: any; forma_pagamento: { tipo: any; }[]; }[]) => void'.
+  Types of parameters 'item' and 'value' are incompatible.
+    Type '{ valor: any; status: any; forma_pagamento: { tipo: any; }[]; }' is not assignable to type '{ valor: number; status: string; forma_pagamento: { tipo: string; }; }'.
+      Types of property 'forma_pagamento' are incompatible.
+        Property 'tipo' is missing in type '{ tipo: any; }[]' but required in type '{ tipo: string; }'.
+src/hooks/useDashboard.ts(146,21): error TS2345: Argument of type '(item: { valor: number; categoria: { tipo: string; }; }) => void' is not assignable to parameter of type '(value: { valor: any; status: any; categoria: { tipo: any; }[]; }, index: number, array: { valor: any; status: any; categoria: { tipo: any; }[]; }[]) => void'.
+  Types of parameters 'item' and 'value' are incompatible.
+    Type '{ valor: any; status: any; categoria: { tipo: any; }[]; }' is not assignable to type '{ valor: number; categoria: { tipo: string; }; }'.
+      Types of property 'categoria' are incompatible.
+        Property 'tipo' is missing in type '{ tipo: any; }[]' but required in type '{ tipo: string; }'.
+src/hooks/useDashboard.ts(200,23): error TS2345: Argument of type '(item: { valor: number; tipo_procedimento: { nome: string; categoria: string; }; }) => void' is not assignable to parameter of type '(value: { valor: any; tipo_procedimento: { nome: any; categoria: any; }[]; }, index: number, array: { valor: any; tipo_procedimento: { nome: any; categoria: any; }[]; }[]) => void'.
+  Types of parameters 'item' and 'value' are incompatible.
+    Type '{ valor: any; tipo_procedimento: { nome: any; categoria: any; }[]; }' is not assignable to type '{ valor: number; tipo_procedimento: { nome: string; categoria: string; }; }'.
+      Types of property 'tipo_procedimento' are incompatible.
+        Type '{ nome: any; categoria: any; }[]' is missing the following properties from type '{ nome: string; categoria: string; }': nome, categoria
+src/lib/supabase.ts(4,33): error TS2339: Property 'env' does not exist on type 'ImportMeta'.
+src/lib/supabase.ts(5,37): error TS2339: Property 'env' does not exist on type 'ImportMeta'.
