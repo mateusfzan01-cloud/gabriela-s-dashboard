@@ -1,10 +1,13 @@
 import { useParams } from 'react-router-dom';
+import { useState } from 'react';
 import { usePaciente } from '@/hooks/usePacientes';
 import { Card, Spinner, Badge, Button, EmptyState } from '@/components/ui';
+import { EditPatientModal } from '@/components/pacientes/EditPatientModal';
 import { formatCurrency, formatDate } from '@/utils/format';
 
 export default function PatientDetails() {
     const { id } = useParams<{ id: string }>();
+    const [isEditModalOpen, setIsEditModalOpen] = useState(false);
     // Safe check if id is undefined, though route should ensure it
     const { data: paciente, isLoading } = usePaciente(id || '');
 
@@ -36,7 +39,9 @@ export default function PatientDetails() {
                         {paciente.email && <span>📧 {paciente.email}</span>}
                     </div>
                 </div>
-                <Button variant="outline">Editar Perfil</Button>
+                <Button variant="outline" onClick={() => setIsEditModalOpen(true)}>
+                    Editar Perfil
+                </Button>
             </div>
 
             {/* Stats Cards */}
@@ -108,6 +113,12 @@ export default function PatientDetails() {
                     </div>
                 )}
             </div>
+
+            <EditPatientModal
+                isOpen={isEditModalOpen}
+                onClose={() => setIsEditModalOpen(false)}
+                paciente={paciente}
+            />
         </div>
     );
 }
